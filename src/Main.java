@@ -14,13 +14,13 @@ public class Main {
         String vstup ="";
 
         while(!vstup.equals("0")) {
-            System.out.println("Vitejde v obchode. Pro vstup do autosalonu stisknete 1, pro vstup do kina 1, pro vstup do elektro obchodu 3, pro vstup do knihovny 4 a pro vstup do video pujcovny 5.");
+            System.out.println("Vitejte v obchode. Pro vstup do autosalonu stisknete 1, pro vstup do kina 1, pro vstup do elektro obchodu 3, pro vstup do knihovny 4 a pro vstup do video pujcovny 5.");
             System.out.println("Pro ukonceni programu stisknete 0.");
             vstup = sc.nextLine();
 
             switch(vstup) {
                 case "1":
-                    CarDatabase carDatabase = new CarDatabase();
+                    CarDatabase carDatabase = new CarDatabase("Stepan");
                     System.out.println("Kolik si prejete pridat aut?");
                     int pocet = sc.nextInt();
                     sc.nextLine();
