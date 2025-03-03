@@ -3,6 +3,6 @@ package autosaloon;
 public enum Condition {
 	bad,
 	good,
-	damaged,
-	excelent;
+	excellent,
+	damaged;
 }
