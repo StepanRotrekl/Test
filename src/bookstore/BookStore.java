@@ -1,21 +1,54 @@
 package bookstore;
 
 
+import library.Book;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class BookStore {
     private String name;
-    private Book[] books;
+    private ArrayList<Book> books;
+
+    public BookStore(String name) {
+        this.name = name;
+        this.books = new ArrayList<>();
+    }
 
     /**
      * Metoda se zepta uzivatele na informace k pozadovanemu poctu knih. A ty prida do pole knih.
      */
-    public void addBoooks() {
-        int count = 0; //spravne cislo nacti od uzivatele, použij scanner
-        //books = new ....
-        for (int i=0; i<count; count++){
-            //nacti od uzivatele nazev, rok vydani, pocet stranek a zanr
-            //pridej knihu do pole knih
-        }
+    public void addBook(Book book) {
+        books.add(book);
+    }
 
+    public void addBooks() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Zadej pocet knih k pridani: ");
+        int count = scanner.nextInt();
+        scanner.nextLine();
+
+        for (int i=0; i<count; i++){
+            System.out.println("Zadej udaje pro knihu:" + (i+1) + " : ");
+
+            System.out.print("Nazev: ");
+            String nazev = scanner.nextLine();
+            scanner.nextLine();
+
+            System.out.print("Zanr: ");
+            String genre = scanner.nextLine();
+            scanner.nextLine();
+
+            System.out.print("Rok vydani: ");
+            int year = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Pocet stran: ");
+            int pages = scanner.nextInt();
+            scanner.nextLine();
+
+            books.add(new Book(name, genre, year, pages));
+        }
     }
 
     /**
@@ -25,7 +58,12 @@ public class BookStore {
      */
     public void printInfo(){
         System.out.println("-----INFO O KNIHKUPECTVI-----");
-        //sem dopln kod
+        System.out.println("Name: " + name);
+        System.out.println("Na sklade mame tuto knihu:");
+        for (Book book : books) {
+            System.out.println(book.printInfo());
+        }
         System.out.println("-----");
     }
 }
+

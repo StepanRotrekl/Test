@@ -28,8 +28,8 @@ public class Main {
                     carDatabase.printCarInGoodCondition();
                     break;
                 case "2":
-                    BookStore knihkupectvi = new BookStore();
-                    knihkupectvi.addBoooks();
+                    BookStore knihkupectvi = new BookStore("Moje knihkupectvi");
+                    knihkupectvi.addBook("Harry Potter", "Fantasy", 2000, 320);
                     knihkupectvi.printInfo();
                     break;
                 case "3":
@@ -70,6 +70,10 @@ public class Main {
 
         }
         System.out.println("Konec programu.");
+
+
+
+
 
 
 
